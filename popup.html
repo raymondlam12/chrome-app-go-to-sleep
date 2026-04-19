@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Go To Sleep 😴</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <header>Go To Sleep 😴</header>
+
+  <section class="rules-section">
+    <h2>Active Rules</h2>
+    <ul id="rules-list"></ul>
+  </section>
+
+  <section class="add-section">
+    <h2>Add Rule</h2>
+    <div class="form-row">
+      <input type="text" id="input-pattern" placeholder="URL pattern (e.g. youtube.com)" />
+      <div class="time-row">
+        <input type="time" id="input-start" title="Block from" />
+        <input type="time" id="input-end" title="Block until" />
+      </div>
+      <div class="error" id="form-error">Please fill in all fields.</div>
+      <button class="btn-add" id="btn-add">Add Rule</button>
+    </div>
+  </section>
+
+  <script src="popup.js"></script>
+</body>
+</html>

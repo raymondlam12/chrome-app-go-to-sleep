@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Site Blocked</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #0f0f1a;
+      color: #e0e0e0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      gap: 32px;
+    }
+
+    .icon { font-size: 48px; }
+
+    h1 {
+      font-size: 22px;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .sub {
+      font-size: 14px;
+      color: #888;
+      text-align: center;
+      max-width: 300px;
+      line-height: 1.5;
+    }
+
+    .card {
+      background: #1a1a2e;
+      border: 1px solid #2a2a4a;
+      border-radius: 12px;
+      padding: 32px 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      width: 340px;
+    }
+
+    .challenge-label {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #666;
+    }
+
+    .equation {
+      font-size: 32px;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: 1px;
+    }
+
+    input[type="number"] {
+      width: 100%;
+      padding: 12px;
+      font-size: 20px;
+      text-align: center;
+      background: #0f0f1a;
+      border: 2px solid #2a2a4a;
+      border-radius: 8px;
+      color: #fff;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    input[type="number"]:focus { border-color: #5a5aff; }
+
+    input[type="number"].shake {
+      animation: shake 0.35s ease;
+      border-color: #e53e3e;
+    }
+
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      20% { transform: translateX(-8px); }
+      40% { transform: translateX(8px); }
+      60% { transform: translateX(-6px); }
+      80% { transform: translateX(6px); }
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #5a5aff;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+
+    button:hover { background: #7070ff; }
+
+    .hint {
+      font-size: 12px;
+      color: #555;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="icon">🔒</div>
+  <h1>Site Blocked</h1>
+  <p class="sub" id="sub-text">This site is blocked during your focus hours. Solve the challenge to proceed.</p>
+
+  <div class="card">
+    <span class="challenge-label">Solve to continue</span>
+    <div class="equation" id="equation"></div>
+    <input type="number" id="answer-input" placeholder="Your answer" />
+    <button id="submit-btn">Submit</button>
+  </div>
+
+  <p class="hint">Correct answer grants 5 minutes of access.</p>
+
+  <script src="blocked.js"></script>
+</body>
+</html>
