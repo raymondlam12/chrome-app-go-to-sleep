@@ -108,6 +108,49 @@
       color: #555;
       text-align: center;
     }
+
+    .scratch-container {
+      width: 480px;
+    }
+
+    .scratch-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #888;
+    }
+
+    .scratch-header button {
+      width: auto;
+      font-size: 11px;
+      padding: 2px 8px;
+      background: transparent;
+      border: 1px solid #444;
+      color: #888;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: normal;
+      transition: border-color 0.15s, color 0.15s;
+    }
+
+    .scratch-header button:hover {
+      background: transparent;
+      border-color: #888;
+      color: #ccc;
+    }
+
+    #scratchpad {
+      display: block;
+      background: #111827;
+      border: 1px solid #2a2a4a;
+      border-radius: 8px;
+      cursor: crosshair;
+      touch-action: none;
+    }
   </style>
 </head>
 <body>
@@ -123,6 +166,14 @@
   </div>
 
   <p class="hint">Correct answer grants 5 minutes of access.</p>
+
+  <div class="scratch-container">
+    <div class="scratch-header">
+      <span>Scratch Pad</span>
+      <button id="clear-canvas">Clear</button>
+    </div>
+    <canvas id="scratchpad" width="480" height="300"></canvas>
+  </div>
 
   <script src="blocked.js"></script>
 </body>
